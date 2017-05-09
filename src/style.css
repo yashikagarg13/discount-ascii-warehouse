@@ -1,0 +1,88 @@
+.products-container {
+  font-size: 18px;
+  margin-top: 50px;
+}
+
+
+/* Products header with sort control */
+.header {
+  margin: 0 auto;
+  margin-bottom: 20px;
+  width: 90%;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  padding-top: 20px;
+}
+
+.form-control {
+  padding: 5px;
+  height: 35px;
+  width: 250px;
+  font-size: 18px;
+}
+
+.loading, .end-of-catalogue {
+  text-align: center;
+  padding-top: 20px;
+}
+
+
+/* Products Grid */
+.products-grid {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  width: 90%;
+}
+
+.products-grid .ad {
+  flex: 1;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+
+.product-ad-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.product {
+  border: 1px solid #cdcdcd;
+  border-radius: 4px;
+  height: 180px;
+  margin-bottom: 20px;
+  margin-right: 20px;
+  padding: 10px;
+  position: relative;
+  width: 300px;
+}
+
+.face {
+  display: block;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.detail {
+  bottom: 10px;
+  clear: both;
+  left: 10px;
+  position: absolute;
+  right: 10px;
+}
+
+/* Common classes */
+.pull-right {
+  float: right;
+}
+
+.pull-left {
+  float: left;
+}
+
+.clearfix {
+  clear: both;
+}
