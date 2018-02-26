@@ -1,31 +1,33 @@
-import React, {Component} from "react";
-import PropTypes from "prop-types";
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class LoadMore extends Component {
-  constructor (props) {
+  constructor ( props ) {
     super (props);
 
     this.state = {
       isVisible: false,
     };
   }
+
   componentDidMount() {
-    window.addEventListener("scroll", this.isScrollIntoView.bind(this));
+    window.addEventListener('scroll', this.isScrollIntoView.bind(this));
   }
+
   componentWillUnmount() {
-    window.removeEventListener("scroll", this.isScrollIntoView);
+    window.removeEventListener('scroll', this.isScrollIntoView);
   }
-  componentDidUpdate(nextProps, nextState) {
+  
+  componentDidUpdate( nextProps, nextState ) {
     if (this.state.isVisible != nextState.isVisible && this.state.isVisible) {
       this.props.onEndOfList();
     }
   }
 
   isScrollIntoView() {
-    let point = document.getElementById("point");
+    let point = this.refs.point;
     if (point) {
-      let bodyHeight = document.body.scrollTop + window.innerHeight;
-
+      let bodyHeight = window.scrollY + window.innerHeight;
       if (bodyHeight >= point.offsetTop) {
         this.setState({
           isVisible: true,
@@ -40,7 +42,7 @@ class LoadMore extends Component {
 
   render () {
     return (
-      <div id="point">
+      <div ref='point'>
         {this.props.children}
       </div>
     );
