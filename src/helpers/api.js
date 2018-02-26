@@ -1,9 +1,4 @@
-import Axios from "axios";
+import { API_BASE_URL } from './constants';
 
-const baseUrl = "http://localhost:8000";
-
-export default {
-  fetchProducts (limit, offset, sort) {
-    return Axios.get(`${baseUrl}/api/products?limit=${limit}&skip=${offset}&sort=${sort}`);
-  }
-};
+export const getProductsAPI = (limit, offset, sort) => 
+  `${API_BASE_URL}/products?limit=${limit}&skip=${offset}&sort=${sort}`;
